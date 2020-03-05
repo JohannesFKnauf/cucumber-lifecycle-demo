@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
+import de.metamorphant.blog.common.SampleSteps;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -19,16 +20,17 @@ public class JunitWrapperCucumberTest {
 	@BeforeClass
 	public static void setupClass() {
 		System.out.println("I run at test class initialization time, i.e. before the whole bunch of all tests");
+		SampleSteps.inject("Blarz");
 	}
 	
 	@Before
 	public void setupMethod() {
-		System.out.println("I run at test method initialization time, i.e. before every single test");
+		System.out.println("I run at test method initialization time, i.e. before every single test; for Cucumber Runner I will never appear");
 	}
 
 	@After
 	public void teardownMethod() {
-		System.out.println("I run at test method completion time, i.e. after every single test");
+		System.out.println("I run at test method completion time, i.e. after every single test; for Cucumber Runner I will never appear");
 	}
 
 	@AfterClass
