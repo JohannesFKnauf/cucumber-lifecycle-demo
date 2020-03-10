@@ -1,6 +1,6 @@
 # Cucumber lifecycle demo
 
-This little set of demos shows how you can tap into the lifecycle of JVM cucumber.
+This little set of demos shows how you can tap into the lifecycle of JVM cucumber to create the equivalent of a `@BeforeAll`/`@AfterAll`.
 
 ## How to reproduce
 
