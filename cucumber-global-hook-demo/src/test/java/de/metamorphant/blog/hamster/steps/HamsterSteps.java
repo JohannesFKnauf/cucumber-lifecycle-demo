@@ -18,10 +18,11 @@ public class HamsterSteps implements En {
 		
 		Before(() -> {
 			if (port == null) {
+				System.out.println("Cucumber Before hook called; starting to train a hamster");
 				HamsterSteps.injectPort(HamsterSteps.randomPort());
 			
 				java.lang.Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-					System.out.println("Gracefully shutting down hamster");
+					System.out.println("JVM shutdown hook called; gracefully shutting down hamster");
 				}));
 			}
 		});

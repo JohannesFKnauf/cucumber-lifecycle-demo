@@ -13,13 +13,13 @@ public class PortSetupLifecycleHandler implements EventListener {
 	@Override
 	public void setEventPublisher(EventPublisher publisher) {
 		publisher.registerHandlerFor(TestRunStarted.class, event -> {
-			System.out.println("Caught TestRunStarted event");
+			System.out.println("Caught TestRunStarted event; starting to train a hamster");
 						
 			HamsterSteps.injectPort(PortSetupLifecycleHandler.randomPort());
 		});
 		
 		publisher.registerHandlerFor(TestRunFinished.class, event -> {
-			System.out.println("Caught TestRunFinished event");
+			System.out.println("Caught TestRunFinished event; gracefully shutting down hamster");
 		});
 	}
 	

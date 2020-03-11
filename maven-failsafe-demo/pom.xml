@@ -52,14 +52,27 @@
 				<version>1.8</version>
 				<executions>
 					<execution>
-						<id>echo-hamster-port</id>
+						<id>hamster-init</id>
 						<phase>pre-integration-test</phase>
 						<goals>
 							<goal>run</goal>
 						</goals>
 						<configuration>
 							<target>
+								<echo>Maven pre-integration-test phase called: Starting to train a hamster</echo>
 								<echo>The hamster will listen on port ${hamster.port}</echo>
+							</target>
+						</configuration>
+					</execution>
+					<execution>
+						<id>hamster-shutdown</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<echo>Maven post-integration-test phase called: Gracefully shutting down hamster</echo>
 							</target>
 						</configuration>
 					</execution>
