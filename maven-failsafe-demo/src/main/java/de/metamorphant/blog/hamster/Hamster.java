@@ -45,6 +45,7 @@ public class Hamster {
 	}
 	
 	public static Hamster trainedHamster(String port) {
+		System.out.println("Providing a trained hamster");
 		return new Hamster(port);
 	}
 }
