@@ -13,6 +13,15 @@ mvn test
 
 Please note the order of output: The lifecycle hooks' output is interleaved with the other Cucumber test output.
 
+### Cucumber Before and shutdown hook
+
+```console
+cd cucumber-global-hook-demo
+mvn test
+```
+
+The order of the output shows: The Before is called inside the Cucumber lifecycle, while the shutdown hook is called at JVM termination time -- just before Maven reports the test results.
+
 ### JUnit Wrapper
 
 ```console

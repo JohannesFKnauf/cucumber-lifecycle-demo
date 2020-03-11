@@ -3,8 +3,6 @@ package de.metamorphant.blog.hamster.steps;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Random;
-
 import de.metamorphant.blog.hamster.Hamster;
 import de.metamorphant.blog.hamster.HamsterUtil;
 import de.metamorphant.blog.hamster.NotInTheMoodException;
@@ -76,13 +74,5 @@ public class HamsterSteps implements En {
 	public static void injectPort(String port) {
 		System.out.println("Setting port to: " + port);
 		HamsterSteps.port = port;
-	}
-	
-	public static String randomPort() {
-		Random rng = new Random();
-		Integer basePortOffset = 30000;
-		Integer port = basePortOffset + rng.nextInt(2000);
-
-		return port.toString();
 	}
 }
