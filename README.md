@@ -1,6 +1,6 @@
 # Cucumber lifecycle demo
 
-This little set of demos shows how you can tap into the lifecycle of JVM cucumber to create the equivalent of a `@BeforeAll`/`@AfterAll`.
+This repo contains the examples for the [blog article about Getting @BeforeAll and @AfterAll behaviour with Cucumber JVM and JUnit](https://metamorphant.de/blog/2020-03-10-beforeall-afterall-cucumber-jvm-junit/). It contains a little set of demos showing how you can tap into the lifecycle of JVM cucumber to create the equivalent of a `@BeforeAll`/`@AfterAll`.
 
 ## How to reproduce
 
