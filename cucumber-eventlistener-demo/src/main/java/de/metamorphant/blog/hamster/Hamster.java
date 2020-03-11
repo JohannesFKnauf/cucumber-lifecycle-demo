@@ -45,13 +45,6 @@ public class Hamster {
 	}
 	
 	public static Hamster trainedHamster(String port) {
-		System.out.println("Hamster training initiated.");
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException ex) {
-			;;
-		}
-		System.out.println("Hamster training completed.");
 		return new Hamster(port);
 	}
 }

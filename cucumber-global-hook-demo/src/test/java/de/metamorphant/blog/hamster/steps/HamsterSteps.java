@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Random;
 
 import de.metamorphant.blog.hamster.Hamster;
+import de.metamorphant.blog.hamster.HamsterUtil;
 import de.metamorphant.blog.hamster.NotInTheMoodException;
 import io.cucumber.java8.En;
 
@@ -19,7 +20,9 @@ public class HamsterSteps implements En {
 		Before(() -> {
 			if (port == null) {
 				System.out.println("Cucumber Before hook called; starting to train a hamster");
-				HamsterSteps.injectPort(HamsterSteps.randomPort());
+
+				String port = HamsterUtil.performExpensiveHamsterTraining();
+				HamsterSteps.injectPort(port);
 			
 				java.lang.Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 					System.out.println("JVM shutdown hook called; gracefully shutting down hamster");

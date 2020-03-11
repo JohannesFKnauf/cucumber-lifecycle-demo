@@ -23,7 +23,8 @@ public class HamsterWithJunitWrapperCucumberTest {
 	@BeforeClass
 	public static void setupClass() {
 		System.out.println("JUnit BeforeClass hook started; starting to train a hamster");
-		HamsterSteps.injectPort(HamsterWithJunitWrapperCucumberTest.randomPort());
+		String port = HamsterUtil.performExpensiveHamsterTraining();
+		HamsterSteps.injectPort(port);
 	}
 	
 	// A method with annotation @Before runs at test method initialization time, i.e. before every single test
@@ -44,13 +45,5 @@ public class HamsterWithJunitWrapperCucumberTest {
 	@AfterClass
 	public static void teardownClass() {
 		System.out.println("JUnit AfterClass hook started; gracefully shutting down hamster");
-	}
-	
-	public static String randomPort() {
-		Random rng = new Random();
-		Integer basePortOffset = 30000;
-		Integer port = basePortOffset + rng.nextInt(2000);
-
-		return port.toString();
 	}
 }

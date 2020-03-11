@@ -61,6 +61,10 @@
 							<target>
 								<echo>Maven pre-integration-test phase called: Starting to train a hamster</echo>
 								<echo>The hamster will listen on port ${hamster.port}</echo>
+								<echo>Hamster training initiated</echo>
+								<echo>Expensive magic is happening in the background.</echo>
+								<sleep seconds="5" />
+								<echo>Hamster training completed</echo>
 							</target>
 						</configuration>
 					</execution>
